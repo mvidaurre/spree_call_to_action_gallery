@@ -30,4 +30,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'launchy'
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'guard-rspec'
+  
 end
