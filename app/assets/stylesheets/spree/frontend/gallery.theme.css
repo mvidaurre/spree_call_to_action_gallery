@@ -1,0 +1,286 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:200,400,700,900|Montserrat:100,400,700,900);
+
+.gallery .control-button {
+  color: #333;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.gallery .control-button:hover {
+  color: #000;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*
+  Theme controls how everything looks in Gallery CSS.
+*/
+.gallery {
+  background: #fff;
+  position: relative;
+}
+.gallery .item {
+  overflow: hidden;
+  text-align: center;
+  background: #fff;
+}
+
+.gallery.vertical {
+  width: 50%;
+}
+
+.gallery.vertical .item {
+  height: 480px;
+}
+
+.gallery.horizontal {
+  width: 100%;
+}
+
+.gallery.horizontal .item {
+  height: auto;
+}
+
+.gallery .controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.gallery .control-button {
+  display: inline-block;
+  margin: 0 .02em;
+  font-size: 3em;
+  text-align: center;
+  text-decoration: none;
+  transition: color .1s;
+}
+
+@-webkit-keyframes galleryAnimation-vertical-3 {
+  0% {
+    opacity: 0;
+  }
+
+  5%, 66.6% {
+    opacity: 1;
+  }
+
+  71.6%, 100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes galleryAnimation-vertical-3 {
+  0% {
+    opacity: 0;
+  }
+
+  5%, 66.6% {
+    opacity: 1;
+  }
+
+  71.6%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes galleryAnimation-vertical-3 {
+  0% {
+    opacity: 0;
+  }
+
+  5%, 66.6% {
+    opacity: 1;
+  }
+
+  71.6%, 100% {
+    opacity: 0;
+  }
+}
+
+.items-3.autoplay.vertical .control-button {
+  -webkit-animation: controlAnimation-3 30s infinite;
+  -o-animation: controlAnimation-3 30s infinite;
+  animation: controlAnimation-3 30s infinite;
+}
+
+.items-3.autoplay.vertical .item {
+  -webkit-animation: galleryAnimation-vertical-3 30s infinite;
+  -o-animation: galleryAnimation-vertical-3 30s infinite;
+  animation: galleryAnimation-vertical-3 30s infinite;
+}
+
+.items-3 .control-operator:nth-of-type(1):target ~ .item:nth-of-type(1) {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.items-3.vertical .control-button:nth-of-type(1),
+.items-3.vertical .item:nth-of-type(1) {
+  -webkit-animation-delay: -3s;
+  -o-animation-delay: -3s;
+  animation-delay: -3s;
+}
+
+.items-3 .control-operator:nth-of-type(2):target ~ .item:nth-of-type(2) {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.items-3.vertical .control-button:nth-of-type(2),
+.items-3.vertical .item:nth-of-type(2) {
+  -webkit-animation-delay: 7s;
+  -o-animation-delay: 7s;
+  animation-delay: 7s;
+}
+
+.items-3 .control-operator:nth-of-type(3):target ~ .item:nth-of-type(3) {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.items-3.vertical .control-button:nth-of-type(3),
+.items-3.vertical .item:nth-of-type(3) {
+  -webkit-animation-delay: 17s;
+  -o-animation-delay: 17s;
+  animation-delay: 17s;
+}
+
+.superfluous {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.gallery .secondary-controls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gallery .secondary-controls a:nth-child(1) {
+  float: left;
+  margin-left: .2em;
+}
+.gallery .secondary-controls a:nth-child(2) {
+  float: right;
+  margin-right: .2em;
+}
+.gallery .secondary-controls .item-1, .gallery .secondary-controls .item-2, .gallery .secondary-controls .item-3, .gallery .secondary-controls .item-4, .gallery .secondary-controls .item-5, .gallery .secondary-controls .item-6, .gallery .secondary-controls .item-7, .gallery .secondary-controls .item-8 {
+  display: none;
+}
+.gallery .secondary-controls .item-1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-5 #item-1:target ~ .secondary-controls .item-1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.gallery.items-5 #item-2:target ~ .secondary-controls .item-2 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-5 #item-3:target ~ .secondary-controls .item-3 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-5 #item-4:target ~ .secondary-controls .item-4 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-5 #item-5:target ~ .secondary-controls .item-5 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-5 #item-2:target ~ .secondary-controls .item-1, .gallery.items-5 #item-3:target ~ .secondary-controls .item-1, .gallery.items-5 #item-4:target ~ .secondary-controls .item-1, .gallery.items-5 #item-5:target ~ .secondary-controls .item-1 {
+  display: none;
+}
+.gallery .secondary-controls .item-6 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.items-3 #item-6:target ~ .secondary-controls .item-6 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.items-3 #item-7:target ~ .secondary-controls .item-7 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.items-3 #item-8:target ~ .secondary-controls .item-8 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-3 #item-7:target ~ .secondary-controls .item-6, .gallery.items-3 #item-8:target ~ .secondary-controls .item-6 {
+  display: none;
+}
+
+.gallery .secondary-controls a {
+  pointer-events: auto;
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 3em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  transition: all .25s;
+  z-index: 99;
+}
+.gallery .secondary-controls a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery .secondary-controls a:nth-child(1) img {
+  margin-right: .1em;
+}
+
+.gallery .secondary-controls a img {
+  margin-top: .1em;
+}
+
+figcaption.call-to-action {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  padding: 2em;
+  z-index: 10;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.70);
+  .title {
+    font-family: 'Lato';
+    font-weight: 100;
+    font-size: 2.5em;
+    line-height: 1em;
+    padding: 0.5em;
+  }
+  .description {
+    font-family: Montserrat;
+    font-weight: 700;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.5em;
+    margin-bottom: 1em;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 300px){
+  figcaption.call-to-action {
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    padding: 1em;
+    .title {
+      font-size: 1.5em;
+    }
+    .description {
+      width: 96%;
+    }
+  }
+}
