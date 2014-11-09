@@ -34,7 +34,7 @@ require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
 
 # Requires factories defined in lib/spree_call_to_action_gallery/factories.rb
-require 'spree_call_to_action_gallery/factories'
+FactoryGirl.find_definitions
 
 
 # Add additional requires below this line. Rails is not loaded until this point!
