@@ -4,12 +4,11 @@ feature "Spree::GalleryAtHomePages", :type => :feature do
   context 'visitor in homepage' do
     let(:store) {create(:store, default: true, url: 'spreecommerce.com')}
     let(:gallery_of_call_to_action) {create(:gallery_of_call_to_action, store: store)}
-    let(:call_to_action) {create(:call_to_action, gallery_of_call_to_action: gallery_of_call_to_action)}
+    let!(:call_to_action) {create(:call_to_action, gallery_of_call_to_action: gallery_of_call_to_action)}
     let(:call_to_action_subscribe) {create(:call_to_action, action: "Subscribe", action_url: "/signup")}
     let(:call_to_action_purchase) {create(:call_to_action, action: "Purchase", action_url: "/cart")}
 
     before do
-      call_to_action
       visit "/"
     end
 
@@ -19,6 +18,12 @@ feature "Spree::GalleryAtHomePages", :type => :feature do
 
     it "should see the title" do
       expect(page).to have_content(call_to_action.title)
+    end
+
+    it "should support html in title with out escaping" do
+      call_to_action.update!(title: "Estar a la <strong>moda</strong> <em>ahora</em> tiene grandes <strong>beneficios</strong>")
+      visit "/"
+      expect(find('h3.title')).to have_content("Esta a la moda ahora tiene grandes beneficios")
     end
 
     context 'several call to action' do

@@ -24,8 +24,8 @@
     <div class="superfluous">
       <%= image_tag call_to_action.picture_url %>
       <figcaption class="call-to-action">
-        <h3 class="title"><%= call_to_action.title %></h3>
-        <div class="description"><%= call_to_action.description
+        <h3 class="title"><%= call_to_action.title.html_safe %></h3>
+        <div class="description"><%= call_to_action.description.html_safe
          %></div>
         <a class="button action" role="button" href="<%= call_to_action.action_url %>"><%= call_to_action.action %></a>
       </figcaption>

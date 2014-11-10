@@ -20,5 +20,6 @@ RSpec.describe Spree::CallToAction, :type => :model do
       expect(call_to_actions_by_store).to include(call_to_action)
       expect(call_to_actions_by_store).to_not include(call_to_action2)
     end
+
   end
 end
