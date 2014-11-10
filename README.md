@@ -1,8 +1,9 @@
 Call To Action Gallery
 ========================
-![](http://img.shields.io/travis/mvidaurre/spree_call_to_action_gallery.svg)
-![](http://img.shields.io/codeclimate/github/mvidaurre/spree_call_to_action_gallery.svg)
-![](http://img.shields.io/gemnasium/mvidaurre/spree_call_to_action_gallery.svg)
+[![Build Status](http://img.shields.io/travis/mvidaurre/spree_call_to_action_gallery.svg)](https://travis-ci.org/mvidaurre/spree_call_to_action_gallery)
+[![Code Climate](http://img.shields.io/codeclimate/github/mvidaurre/spree_call_to_action_gallery.svg)](https://codeclimate.com/github/mvidaurre/spree_call_to_action_gallery)
+[![Coverage Status](https://coveralls.io/repos/mvidaurre/spree_call_to_action_gallery/badge.png)](https://coveralls.io/r/mvidaurre/spree_call_to_action_gallery)
+[![Gemnasium](http://img.shields.io/gemnasium/mvidaurre/spree_call_to_action_gallery.svg)](https://gemnasium.com/mvidaurre/spree_call_to_action_gallery)
 ![](https://reposs.herokuapp.com/?path=mvidaurre/spree_call_to_action_gallery)
 
 An ecommerce store wants to entice its visitors to specific behaviors as: **Acquisition** (ex: Sign Up for an Account), **Activation** (ex: Purchasing a Product), **Retention** (ex: Recurrent Customers buying new Product or using Promotions), **Referral** (ex: Inviting friends to join the ecommerce store), this are part of the Dave McClure's [startup metrics for pirates AARRR](http://www.slideshare.net/dmc500hats/startup-metrics-for-pirates-long-version). One way to achieve this is to communicate a **call to action** for the *visitor*. This extension allows to manage a gallery with call to actions and associated pictures.

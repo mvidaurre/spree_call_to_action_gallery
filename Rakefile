@@ -4,9 +4,12 @@ Bundler::GemHelper.install_tasks
 require 'rspec/core/rake_task'
 require 'spree/testing_support/extension_rake'
 
-require File.expand_path('spec/dummy/config/environment.rb')
+if ENV['RAILS_ENV'] == 'development'
 
-Rails.application.load_tasks
+  require File.expand_path('spec/dummy/config/environment.rb')
+
+  Rails.application.load_tasks
+end
 
 RSpec::Core::RakeTask.new
 
