@@ -1,0 +1,39 @@
+<div data-hook="admin_call_to_action_form_fields">
+  <div class="left eight columns alpha" data-hook="admin_page_form_left">
+
+    <%= f.field_container :title do %>
+      <%= f.label :title %> <span class="required">*</span><br />
+      <%= f.text_field :title, :class => 'fullwidth title' %>
+      <%= f.error_message_on :title %>
+    <% end %>
+
+    <%= f.field_container :description do %>
+      <%= f.label :description %> <span class="required">*</span><br />
+      <%= f.text_field :description, :class => 'fullwidth title' %>
+      <%= f.error_message_on :description %>
+    <% end %>
+
+    <%= f.field_container :action do %>
+      <%= f.label :action %> <span class="required">*</span><br />
+      <%= f.text_field :action, :class => 'fullwidth title' %>
+      <%= f.error_message_on :action %>
+    <% end %>
+
+    <%= f.field_container :action_url do %>
+      <%= f.label :action_url %> <span class="required">*</span><br />
+      <%= f.text_field :action_url, :class => 'fullwidth title' %>
+      <%= f.error_message_on :action_url %>
+    <% end %>
+
+    <%= f.field_container :picture_url do %>
+      <%= f.label :picture_url %> <span class="required">*</span><br />
+      <%= f.text_field :picture_url, :class => 'fullwidth title' %>
+      <%= f.error_message_on :picture_url %>
+    <% end %>
+
+  </div>
+
+  <div class="clear"></div>
+  <div data-hook="admin_call_to_action_form_additional_fields"></div>
+  <div class="clear"></div>
+</div>

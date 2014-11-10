@@ -1,0 +1,61 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t('call_to_actions.call_to_actions'), spree.admin_gallery_of_call_to_action_call_to_actions_url, :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<% content_for :page_title do %>
+   <%= Spree.t("call_to_actions.call_to_actions") %>
+<% end %>
+
+<% if @call_to_actions.any? %>
+<table class="index responsive" id="listing_call_to_actions" data-hook>
+  <colgroup>
+    <col style="width: 40%">
+    <col style="width: 35%">
+    <col style="width: 10%">
+    <col style="width: 15%">
+  </colgroup>
+  <thead>
+    <tr data-hook="admin_gallery_of_call_to_action_call_to_actions_index_headers">
+      <th><%= Spree::CallToAction.human_attribute_name(:title) %></th>
+      <th><%= Spree::CallToAction.human_attribute_name(:description) %></th>
+      <th><%= Spree::CallToAction.human_attribute_name(:action) %></th>
+      <th><%= Spree::CallToAction.human_attribute_name(:action_url) %></th>
+      <th><%= Spree::CallToAction.human_attribute_name(:picture_url) %></th>
+      <th data-hook="admin_gallery_of_call_to_action_call_to_actions_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @call_to_actions.each do |call_to_action| %>
+      <tr data-hook="admin_gallery_of_call_to_action_call_to_actions_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id call_to_action %>">
+        <td>
+          <%= call_to_action.title %>
+        </td>
+        <td>
+          <%= call_to_action.description %>
+        </td>
+        <td>
+          <%= call_to_action.action %>
+        </td>
+        <td>
+          <%= call_to_action.action_url %>
+        </td>
+        <td>
+          <%= call_to_action.picture_url %>
+        </td>
+        <td class="actions" data-hook="admin_gallery_of_call_to_action_call_to_actions_index_row_actions">
+          <%= link_to_edit call_to_action, :no_text => true %>
+          <%= link_to_delete call_to_action, :no_text => true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <div class="alpha twelve columns no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/call_to_action')) %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_gallery_of_call_to_action_call_to_action_path(@gallery_of_call_to_action) %>!
+  </div>
+<% end %>
