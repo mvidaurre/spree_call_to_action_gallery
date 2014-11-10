@@ -23,6 +23,7 @@
       <th><%= Spree::CallToAction.human_attribute_name(:action) %></th>
       <th><%= Spree::CallToAction.human_attribute_name(:action_url) %></th>
       <th><%= Spree::CallToAction.human_attribute_name(:picture_url) %></th>
+      <th><%= Spree::CallToAction.human_attribute_name(:position) %></th>
       <th data-hook="admin_gallery_of_call_to_action_call_to_actions_index_header_actions" class="actions"></th>
     </tr>
   </thead>
@@ -44,6 +45,9 @@
         </td>
         <td>
           <%= call_to_action.picture_url %>
+        </td>
+        <td>
+          <%= call_to_action.position %>
         </td>
         <td class="actions" data-hook="admin_gallery_of_call_to_action_call_to_actions_index_row_actions">
           <%= link_to_edit call_to_action, :no_text => true %>

@@ -173,11 +173,11 @@
   display: table-cell;
   vertical-align: middle;
 }
+
 .gallery.items-5 #item-1:target ~ .secondary-controls .item-1 {
   display: table-cell;
   vertical-align: middle;
 }
-
 .gallery.items-5 #item-2:target ~ .secondary-controls .item-2 {
   display: table-cell;
   vertical-align: middle;
@@ -197,6 +197,55 @@
 .gallery.items-5 #item-2:target ~ .secondary-controls .item-1, .gallery.items-5 #item-3:target ~ .secondary-controls .item-1, .gallery.items-5 #item-4:target ~ .secondary-controls .item-1, .gallery.items-5 #item-5:target ~ .secondary-controls .item-1 {
   display: none;
 }
+
+.gallery.items-4 #item-1:target ~ .secondary-controls .item-1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-4 #item-2:target ~ .secondary-controls .item-2 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-4 #item-3:target ~ .secondary-controls .item-3 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-4 #item-4:target ~ .secondary-controls .item-4 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-4 #item-2:target ~ .secondary-controls .item-1, .gallery.items-4 #item-3:target ~ .secondary-controls .item-1, .gallery.items-4 #item-4:target ~ .secondary-controls .item-1 {
+  display: none;
+}
+
+.gallery.items-3 #item-1:target ~ .secondary-controls .item-1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-3 #item-2:target ~ .secondary-controls .item-2 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-3 #item-3:target ~ .secondary-controls .item-3 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-3 #item-2:target ~ .secondary-controls .item-1, .gallery.items-3 #item-3:target ~ .secondary-controls .item-1{
+  display: none;
+}
+
+.gallery.items-2 #item-1:target ~ .secondary-controls .item-1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-2 #item-2:target ~ .secondary-controls .item-2 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.gallery.items-2 #item-2:target ~ .secondary-controls .item-{
+  display: none;
+}
+
 .gallery .secondary-controls .item-6 {
   display: table-cell;
   vertical-align: middle;

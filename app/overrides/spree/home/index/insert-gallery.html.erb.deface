@@ -10,8 +10,8 @@
       <%(1..cta_count).each do |item|%> 
       <div class="item-<%= item %> secondary-control">
         <nav>
-          <a href="#item-<%= item == 1 ? cta_count : item-1 %>"><img src="/assets/images/spree/frontend/arrow-left.svg" alt="Left pointing arrow"></a>
-          <a href="#item-<%= item == cta_count ? 1 : item+1 %>"><img src="/assets/images/spree/frontend/arrow-right.svg" alt="Right pointing arrow"></a>
+          <a href="#item-<%= item == 1 ? cta_count : item-1 %>"><%= image_tag "spree/frontend/arrow-left.svg", alt: "Left pointing arrow" %></a>
+          <a href="#item-<%= item == cta_count ? 1 : item+1 %>"><%= image_tag "spree/frontend/arrow-right.svg", alt: "right pointing arrow" %></a>
         </nav>
       </div>
       <% end %>

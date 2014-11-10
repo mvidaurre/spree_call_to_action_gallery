@@ -23,7 +23,7 @@ feature "Spree::GalleryAtHomePages", :type => :feature do
     it "should support html in title with out escaping" do
       call_to_action.update!(title: "Estar a la <strong>moda</strong> <em>ahora</em> tiene grandes <strong>beneficios</strong>")
       visit "/"
-      expect(find('h3.title')).to have_content("Esta a la moda ahora tiene grandes beneficios")
+      expect(find('h3.title')).to have_content("Estar a la moda ahora tiene grandes beneficios")
     end
 
     context 'several call to action' do
