@@ -3,6 +3,7 @@ FactoryGirl.define do
     title { generate(:random_string) }
     description  { generate(:random_description) }
     action "Call to Action"
+    action_url "/call_to_action"
     sequence(:picture_url) { |n| "/images/call_to_action#{n}" }
   end
 end

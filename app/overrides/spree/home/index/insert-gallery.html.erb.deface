@@ -1,37 +1,33 @@
 <!-- insert_before '[data-hook="homepage_products"]'-->
-
-<div class="gallery items-5 autoplay horizontal stretch-container" >
-  <div id="item-1" class="control-operator"></div>
-  <div id="item-2" class="control-operator"></div>
-  <div id="item-3" class="control-operator"></div>
-  <div id="item-4" class="control-operator"></div>
-  <div id="item-5" class="control-operator"></div>
+<% cta_count = @call_to_actions.count %>
+<div class="gallery items-<%= cta_count %> autoplay horizontal stretch-container" >
+  <%(1..cta_count).each do |item|%>
+    <div id="item-<%= item %>" class="control-operator"></div>
+  <% end %>
 
   <div class="secondary-controls">
     <div class="superfluous">
-      <%(1..5).each do |item|%> 
+      <%(1..cta_count).each do |item|%> 
       <div class="item-<%= item %> secondary-control">
         <nav>
-          <a href="#item-<%= item == 1 ? 5 : item-1 %>"><img src="/assets/images/spree/frondend/arrow-left.svg" alt="Left pointing arrow"></a>
-          <a href="#item-<%= item == 5 ? 1 : item+1 %>"><img src="/assets/images/spree/frondend/arrow-right.svg" alt="Right pointing arrow"></a>
+          <a href="#item-<%= item == 1 ? cta_count : item-1 %>"><img src="/assets/images/spree/frontend/arrow-left.svg" alt="Left pointing arrow"></a>
+          <a href="#item-<%= item == cta_count ? 1 : item+1 %>"><img src="/assets/images/spree/frontend/arrow-right.svg" alt="Right pointing arrow"></a>
         </nav>
       </div>
       <% end %>
     </div>
   </div>
 
-  <% left_img = (1...9).to_a.shuffle[0..4]%>
   <% n = 1%>
-  
-  <% left_img.each do |limg| %>
+  <% @call_to_actions.each do |call_to_action| %>
   <figure class="item item-<%= n %>">
     <div class="superfluous">
-      <%= image_tag "spree/frontend/home.h.#{limg}.jpg" %>
+      <%= image_tag call_to_action.picture_url %>
       <figcaption class="call-to-action">
-        <h3 class="title">This store gives you <strong>Huge Benefits</strong></h3>
-        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet volutpat ipsum. Vestibulum maximus, ante non maximus malesuada, felis nunc dapibus libero, sit amet imperdiet quam magna vitae libero. Fusce maximus sagittis purus. Curabitur mauris ligula, pharetra ut placerat sit amet, cursus et leo. Fusce ac facilisis purus, ac interdum arcu. Praesent ullamcorper magna nulla, a consequat mi volutpat ut. Nulla tincidunt diam id laoreet aliquet.
-        </div>
-        <a class="button action" role="button" href="/signup">Call to Action</a>
+        <h3 class="title"><%= call_to_action.title %></h3>
+        <div class="description"><%= call_to_action.description
+         %></div>
+        <a class="button action" role="button" href="<%= call_to_action.action_url %>"><%= call_to_action.action %></a>
       </figcaption>
     </div>
   </figure>
@@ -39,11 +35,10 @@
   <% end %>
 
   <div class="controls">
-    <a href="#item-1" class="control-button">•</a>
-    <a href="#item-2" class="control-button">•</a>
-    <a href="#item-3" class="control-button">•</a>
-    <a href="#item-4" class="control-button">•</a>
-    <a href="#item-5" class="control-button">•</a>
+    <%(1..cta_count).each do |item|%>
+      <a href="#item-<%= item %>" class="control-button">•</a>
+      <div id="item-<%= item %>" class="control-operator"></div>
+    <% end %>
   </div>
 
 </div>
