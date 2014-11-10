@@ -1,0 +1,29 @@
+---
+es-MX:
+  activerecord:
+    attributes:
+    models:
+      spree/gallery_of_call_to_action:
+        few: Galerias
+        many: Galerias
+        one: Galeria de llamadas a la acción
+        other: Galerias
+  spree:
+    admin:
+      tab:
+        gallery_of_call_to_actions: Galerias
+    back_to_gallery_of_call_to_actions_list: "Regresar a las galerias de llamadas a la acción"
+    call_to_action:
+      new_call_to_action: Nueva llamada a la acción
+    call_to_actions:
+      call_to_actions: Llamadas a la acción
+      list: Lista de llamadas a la acción
+    gallery_of_call_to_action: Galeria de llamadas a la acción
+    gallery_of_call_to_actions: Galerias
+    gallery:
+      gallery_of_call_to_actions: Galerias
+      new_gallery_of_call_to_action: Nueva galeria de llamadas a la acción
+      editing_gallery_of_call_to_action: Editar galeria de llamadas a la acción
+    galleries: Galerias
+
+

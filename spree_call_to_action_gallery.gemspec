@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_call_to_action_gallery'
-  s.version     = '2.4.0.rc4'
+  s.version     = '2.4.0.rc4-1'
   s.summary     = 'A spree extension for a call to actions gallery'
   s.description = 'This extension allows to have a gallery with a call to action and pictures. Mainly to be used in the Store Home'
   s.required_ruby_version = '>= 2.1.3'
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'rspec-rails',  '~> 3.1'
   s.add_development_dependency 'sass-rails', '~> 4.0.2'
+  s.add_development_dependency 'poltergeist'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
