@@ -1,0 +1,44 @@
+<!-- insert_before '[data-hook="homepage_products"]'-->
+<% cta_count = @call_to_actions.count %>
+<div class="gallery items-<%= cta_count %> autoplay horizontal stretch-container" >
+  <%(1..cta_count).each do |item|%>
+    <div id="item-<%= item %>" class="control-operator"></div>
+  <% end %>
+
+  <div class="secondary-controls">
+    <div class="superfluous">
+      <%(1..cta_count).each do |item|%> 
+      <div class="item-<%= item %> secondary-control">
+        <nav>
+          <a href="#item-<%= item == 1 ? cta_count : item-1 %>"><img src="/assets/images/spree/frontend/arrow-left.svg" alt="Left pointing arrow"></a>
+          <a href="#item-<%= item == cta_count ? 1 : item+1 %>"><img src="/assets/images/spree/frontend/arrow-right.svg" alt="Right pointing arrow"></a>
+        </nav>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <% n = 1%>
+  <% @call_to_actions.each do |call_to_action| %>
+  <figure class="item item-<%= n %>">
+    <div class="superfluous">
+      <%= image_tag call_to_action.picture_url %>
+      <figcaption class="call-to-action">
+        <h3 class="title"><%= call_to_action.title %></h3>
+        <div class="description"><%= call_to_action.description
+         %></div>
+        <a class="button action" role="button" href="<%= call_to_action.action_url %>"><%= call_to_action.action %></a>
+      </figcaption>
+    </div>
+  </figure>
+  <% n += 1%>
+  <% end %>
+
+  <div class="controls">
+    <%(1..cta_count).each do |item|%>
+      <a href="#item-<%= item %>" class="control-button">•</a>
+      <div id="item-<%= item %>" class="control-operator"></div>
+    <% end %>
+  </div>
+
+</div>
