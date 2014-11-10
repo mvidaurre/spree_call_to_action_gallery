@@ -1,0 +1,20 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+   <%= Spree.t("gallery.gallery_of_call_to_actions") %> <i class="icon-arrow-right"></i> <%= Spree.t("call_to_actions.new_call_to_action") %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t('call_to_actions.call_to_actions'), spree.admin_gallery_of_call_to_action_call_to_actions_url, :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= render "spree/shared/error_messages", :target => @call_to_action %>
+
+<%= form_for [:admin, @gallery_of_call_to_action, @call_to_action] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= button Spree.t('actions.create'), 'ok' %>
+    </div>
+  </fieldset>
+<% end %>

@@ -36,6 +36,20 @@ require 'spree/testing_support/url_helpers'
 # Requires factories defined in lib/spree_call_to_action_gallery/factories.rb
 FactoryGirl.find_definitions
 
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
+options = {
+  js_errors: false,
+  timeout: 240,
+  phantomjs_logger: StringIO.new,
+  logger: nil,
+  phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes']
+}
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, options)
+end
+Capybara.default_wait_time = 10
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -104,6 +118,19 @@ RSpec.configure do |config|
   # After each spec clean the database.
   config.after :each do
     DatabaseCleaner.clean
+  end
+
+  config.after(:each, type: :feature) do |example| 
+    missing_translations = page.body.scan(/translation missing: #{I18n.locale}\.(.*?)[\s<\"&]/)
+    if missing_translations.any?
+      #binding.pry
+      puts "Found missing translations: #{missing_translations.inspect}"
+      puts "In spec: #{example.location}"
+    end
+    if ENV['LOCAL']  && example.exception
+      save_and_open_page
+      page.save_screenshot("tmp/capybara/screenshots/#{example.metadata[:description]}.png", full: true)
+    end
   end
 
   config.fail_fast = ENV['FAIL_FAST'] || false

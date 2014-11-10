@@ -1,5 +1,29 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+---
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+    models:
+      spree/gallery_of_call_to_action:
+        few: Galleries
+        many: Galleries
+        one: Gallery of call to action
+        other: Galleries
+  spree:
+    admin:
+      tab:
+        gallery_of_call_to_actions: Galleries
+    back_to_gallery_of_call_to_actions_list: "Back to galleries of call to actions"
+    call_to_action:
+      new_call_to_action: New call to action
+    call_to_actions:
+      call_to_actions: Call to actions
+      list: List of call to actions
+    gallery_of_call_to_action: Gallery of call to action
+    gallery_of_call_to_actions: Galleries
+    gallery:
+      gallery_of_call_to_actions: Galleries
+      new_gallery_of_call_to_action: New gallery of call to action
+      editing_gallery_of_call_to_action: Editing gallery of call to action
+    galleries: Galleries
+
+
