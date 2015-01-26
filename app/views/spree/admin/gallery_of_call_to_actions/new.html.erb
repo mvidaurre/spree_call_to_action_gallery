@@ -1,11 +1,9 @@
-<%= render 'spree/admin/shared/configuration_menu' %>
-
 <% content_for :page_title do %>
    <%= Spree.t("gallery.gallery_of_call_to_actions") %> <i class="icon-arrow-right"></i> <%= Spree.t("gallery.new_gallery_of_call_to_action") %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li><%= button_link_to Spree.t(:gallery_of_call_to_actions), spree.admin_gallery_of_call_to_actions_url, :icon => 'icon-arrow-left' %></li>
+  <%= button_link_to Spree.t(:gallery_of_call_to_actions), spree.admin_gallery_of_call_to_actions_url, :class => "btn-success", :icon => 'add' %>
 <% end %>
 
 <%= render "spree/shared/error_messages", :target => @gallery_of_call_to_action %>

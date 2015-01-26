@@ -1,7 +1,5 @@
-<%= render 'spree/admin/shared/configuration_menu' %>
-
 <% content_for :page_actions do %>
-  <li><%= button_link_to Spree.t("gallery.new_gallery_of_call_to_action"), new_object_url, :icon => 'icon-plus', :id => 'admin_new_gallery_of_call_to_actions' %></li>
+  <%= button_link_to Spree.t("gallery.new_gallery_of_call_to_action"), new_object_url, :class => "btn-success", :icon => 'add' %>
 <% end %>
 
 <% content_for :page_title do %>
@@ -21,7 +19,7 @@
       <th><%= Spree::GalleryOfCallToAction.human_attribute_name(:name) %></th>
       <th><%= Spree::GalleryOfCallToAction.human_attribute_name(:description) %></th>
       <th><%= Spree::GalleryOfCallToAction.human_attribute_name(:max_call_to_actions_count) %></th>
-      <th><%= Spree.t(:actions) %></th>
+      <th><%= Spree.t(:galery_actions) %></th>
       <th data-hook="admin_gallery_of_call_to_actions_index_header_actions" class="actions"></th>
     </tr>
   </thead>
@@ -39,8 +37,8 @@
           <%= gallery.max_call_to_actions_count %>
         </td>
         <td class="align-center">
-          <%= button_link_to Spree.t("call_to_action.new_call_to_action"), new_admin_gallery_of_call_to_action_call_to_action_url(gallery.id), :icon => 'icon-plus', gallery_of_call_to_action_id: gallery.id %>
-          <%= button_link_to Spree.t("call_to_actions.list"), admin_gallery_of_call_to_action_call_to_actions_url(gallery.id), :icon => 'icon-plus', gallery_of_call_to_action_id: gallery.id %>        
+          <%= button_link_to Spree.t("call_to_action.new_call_to_action"), new_admin_gallery_of_call_to_action_call_to_action_url(gallery.id), :class => "btn-success", :icon => 'add' , gallery_of_call_to_action_id: gallery.id %>
+          <%= button_link_to Spree.t("call_to_actions.list"), admin_gallery_of_call_to_action_call_to_actions_url(gallery.id), :class => "btn-success", :icon => 'add' , gallery_of_call_to_action_id: gallery.id %>        
         </td>
         <td class="actions" data-hook="admin_gallery_of_call_to_actions_index_row_actions">
           <%= link_to_edit gallery, :no_text => true %>
