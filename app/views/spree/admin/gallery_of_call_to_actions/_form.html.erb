@@ -1,26 +1,26 @@
 <div data-hook="admin_gallery_of_call_to_action_form_fields">
-  <div class="left eight columns alpha" data-hook="admin_page_form_left">
+  <div class="col-sm-6" data-hook="admin_page_form_left">
 
     <%= f.field_container :name do %>
       <%= f.label :name %> <span class="required">*</span><br />
-      <%= f.text_field :name, :class => 'fullwidth title' %>
+      <%= f.text_field :name, :class => 'form-control' %>
       <%= f.error_message_on :name %>
     <% end %>
 
     <%= f.field_container :description do %>
       <%= f.label :description %> <span class="required">*</span><br />
-      <%= f.text_field :description, :class => 'fullwidth title' %>
+      <%= f.text_field :description, :class => 'form-control' %>
       <%= f.error_message_on :description %>
     <% end %>
 
     <%= f.field_container :max_call_to_actions_count do %>
       <%= f.label :max_call_to_actions_count %> <span class="required">*</span><br />
-      <%= f.text_field :max_call_to_actions_count, :class => 'fullwidth title' %>
+      <%= f.text_field :max_call_to_actions_count, :class => 'form-control' %>
       <%= f.error_message_on :max_call_to_actions_count %>
     <% end %>
 
   </div>
-  <div class="right four columns omega" data-hook="admin_gallery_of_call_to_actions_form_right">
+  <div class="col-sm-6" data-hook="admin_gallery_of_call_to_actions_form_right">
 
     <%= f.field_container :stores do %>
       <%= f.label :stores, Spree.t(:stores)%><br />
