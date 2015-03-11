@@ -37,8 +37,7 @@
           <%= gallery.max_call_to_actions_count %>
         </td>
         <td class="align-center">
-          <%= button_link_to Spree.t("call_to_action.new_call_to_action"), new_admin_gallery_of_call_to_action_call_to_action_url(gallery.id), :class => "btn-success", :icon => 'add' , gallery_of_call_to_action_id: gallery.id %>
-          <%= button_link_to Spree.t("call_to_actions.list"), admin_gallery_of_call_to_action_call_to_actions_url(gallery.id), :class => "btn-success", :icon => 'add' , gallery_of_call_to_action_id: gallery.id %>        
+          <%= button_link_to Spree.t("call_to_actions.list"), admin_gallery_of_call_to_action_call_to_actions_url(gallery.id), :class => "btn btn-info", gallery_of_call_to_action_id: gallery.id %>        
         </td>
         <td class="actions" data-hook="admin_gallery_of_call_to_actions_index_row_actions">
           <%= link_to_edit gallery, :no_text => true %>
